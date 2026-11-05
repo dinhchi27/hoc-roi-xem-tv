@@ -1,4 +1,4 @@
-# Ngân hàng Tiếng Việt — TV Quiz 0.7
+# Ngân hàng Tiếng Việt — Học Rồi Xem TV
 
 100 câu tự biên soạn để phụ huynh duyệt nội dung. Đáp án trong app được đảo vị trí.
 

@@ -24,9 +24,17 @@ Dịch vụ chạy nền có thông báo hệ thống. App đăng ký khởi đ�
 
 Nếu quên PIN, không có mã mở khóa mặc định. Xóa dữ liệu app hoặc gỡ/cài lại sẽ xóa PIN và toàn bộ thiết lập. Cơ chế PIN chỉ bảo vệ cài đặt bên trong Học Rồi Xem TV, không khóa trang Cài đặt Android hoặc ngăn gỡ app.
 
+## Lớp học, môn học và số câu
+
+Trong **Quản trị phụ huynh → nhập PIN**, chọn **Lớp học**, **Môn học** và **Số câu đúng mỗi lượt** (1–20). Đổi các lựa chọn này sẽ bắt đầu lượt mới.
+
+App có 888 câu Toán và 100 câu Tiếng Việt, chia theo lớp 1–5. Chế độ kết hợp xen kẽ hai môn trong khi cả hai bộ còn câu chưa dùng. Nội dung là ôn tập cơ bản, không cam kết khớp tiến độ từng bộ sách. Xem [ngân hàng Tiếng Việt và đáp án](NGAN-HANG-TIENG-VIET.md).
+
+Tiến độ hiển thị **Đã đúng X/Y**. Sai đổi câu, giữ số câu đúng; đủ Y câu mới xem tiếp, không yêu cầu đúng liên tiếp. Tiến độ được lưu qua Home và khởi động lại TV.
+
 ## Khi bé xem
 
-App tính thời gian YouTube ở phía trước, kể cả menu hoặc video tạm dừng, chưa đo thời gian video thực sự phát. Đủ thời gian thì gửi PAUSE và hiện câu hỏi; dùng trái/phải và OK để chọn. Sai đổi câu, đúng mới đóng. Bấm Play/OK nếu YouTube chưa phát lại. Back không đóng bài; Home vẫn do Android quản lý. Mở lại YouTube sẽ gặp bài đang chờ.
+App tính thời gian YouTube ở phía trước, kể cả menu hoặc video tạm dừng, chưa đo thời gian video thực sự phát. Đủ thời gian thì gửi PAUSE và hiện câu hỏi; dùng trái/phải và OK để chọn. Sai đổi câu, đúng đủ số câu đã đặt mới đóng. Bấm Play/OK nếu YouTube chưa phát lại. Back không đóng bài; Home vẫn do Android quản lý. Mở lại YouTube sẽ gặp bài đang chờ.
 
 ## Checklist thử trên Sony
 
@@ -52,50 +60,17 @@ adb shell appops set vn.tvquiz GET_USAGE_STATS allow
 
 `./build.sh` dùng Java 21, Android API 30 / target API 29, Build Tools 35.0.0. Công cụ nằm trong `.tools`. Đã biên dịch, xác minh chữ ký APK và zip alignment. Test `tests/PinCodecTest.java` kiểm tra PIN đúng/sai, số 0 đầu và salt. Chưa có thiết bị/emulator kết nối để chạy kiểm thử tích hợp; cần checklist Sony phía trên. Logo trong `assets/`.
 
-## Cập nhật 0.6 — số câu đúng và chọn lớp
+## Lịch sử cập nhật
 
-Trong Quản trị phụ huynh (PIN), chọn **Số câu đúng mỗi lượt** từ 1 đến 20 và **Ngân hàng Toán: Lớp** từ 1 đến 5. Mặc định giữ hành vi 1 câu, lớp 1. Đổi lớp hoặc số câu khởi tạo chu kỳ mới. Nút Thử một lượt câu hỏi dùng đúng số câu/lớp đã chọn.
+### v1.0 — phát hành chính thức
 
-- Lớp 1: 189 câu cộng trừ trong phạm vi 20.
-- Lớp 2: 180 câu cộng trừ đến 100, nhân chia 2 và 5.
-- Lớp 3: 192 câu bảng nhân chia, cộng trừ, chu vi hình vuông.
-- Lớp 4: 180 câu nhân chia, cộng phân số cùng mẫu, diện tích hình chữ nhật.
-- Lớp 5: 147 câu số thập phân, phần trăm, thể tích hình hộp chữ nhật.
+- Tự theo dõi thời gian xem YouTube, hỗ trợ tạm nghỉ và tự bật lại.
+- Quản trị có PIN, tùy chỉnh thời gian và yêu cầu 1–20 câu đúng mỗi lượt.
+- Chọn lớp 1–5 và môn Toán, Tiếng Việt hoặc kết hợp hai môn.
+- Ngân hàng ngoại tuyến gồm 888 câu Toán và 100 câu Tiếng Việt.
+- Điều khiển bằng remote, lưu tiến độ làm bài khi về Home hoặc khởi động lại TV.
+- Tên ứng dụng **Học Rồi Xem TV**, dòng mô tả **Quản lý giờ xem, mở khóa bằng kiến thức.**
 
-Tổng 888 câu Toán do ứng dụng tạo theo mẫu và lưu trong mã nguồn, dùng ngoại tuyến. Đây là các bài ôn tập cơ bản theo mức lớp, không phải ngân hàng đủ mọi môn hay khớp từng tuần của sách giáo khoa. Phụ huynh chọn theo kiến thức bé đã học; đầu năm có thể cần chọn lớp thấp hơn.
-
-Tiến độ hiển thị Đã đúng X/Y. Sai đổi câu và giữ số đúng; đúng đủ Y mới được xem tiếp. Không yêu cầu đúng liên tiếp. Thứ tự câu hỏi/đáp án được trộn; không lặp câu trước khi dùng hết bộ của lớp. Tiến độ, thứ tự và câu hiện tại được lưu qua Home/khởi động lại. Đổi cài đặt hoặc tạm nghỉ có PIN sẽ đặt lại lượt bài.
-
-Đã kiểm tra tự động đáp án của cả 888 câu, lựa chọn không trùng, khả năng dựng lại thứ tự sau khôi phục, giữ tiến độ sau câu sai và điều kiện hoàn thành 1/3/20 câu. APK đã build và xác minh chữ ký; chưa kiểm thử tích hợp phiên bản này trên Sony thật.
-
-Thử nhanh: chọn lớp 2, 3 câu đúng, 5 giây → mở YouTube → đúng 1 câu → sai 1 câu (vẫn 1/3) → Home rồi quay lại (vẫn 1/3) → đúng đủ 3 câu mới đóng bài. Thử khởi động lại giữa lượt để xác nhận giữ tiến độ trên TV.
-
-## Cập nhật 0.7 — ngân hàng Tiếng Việt lớp 1–5
-
-Cài đè APK v0.7. Vào **Quản trị phụ huynh → PIN → Lớp học → Môn học**, chọn **Tiếng Việt** hoặc **Kết hợp Toán + Tiếng Việt**. Giữ mặc định Toán cho bản cài nâng cấp để không tự thay đổi môn của bé. Đổi môn đặt lại lượt làm bài, giống đổi lớp.
-
-Bổ sung 100 câu tự biên soạn, 20 câu mỗi lớp, dùng ngoại tuyến:
-
-- Lớp 1: vần, dấu thanh, chữ đầu, từ quen thuộc và đọc hiểu câu ngắn.
-- Lớp 2: từ chỉ sự vật/hoạt động/đặc điểm, dấu câu, trái nghĩa và đọc hiểu.
-- Lớp 3: thành phần thông tin trong câu, so sánh, từ vựng, chính tả và đọc hiểu.
-- Lớp 4: danh từ/động từ/tính từ, chủ ngữ/vị ngữ/trạng ngữ, nhân hóa, từ ghép/từ láy và đọc hiểu.
-- Lớp 5: đồng nghĩa/trái nghĩa/đồng âm, nghĩa gốc/nghĩa chuyển, đại từ, câu ghép, liên kết câu và đọc hiểu.
-
-Chế độ kết hợp bắt đầu bằng một câu Tiếng Việt, sau đó một câu Toán; xen kẽ trong khi cả hai bộ còn câu chưa dùng, rồi tiếp tục phần còn lại. Số câu đúng cần đạt tính chung hai môn. Tiến độ và quy tắc sai đổi câu giữ nguyên. Điều chỉnh chữ câu hỏi/đáp án dài để phù hợp remote và màn hình TV.
-
-Đây là ngân hàng ôn tập cơ bản theo mức lớp, không bao phủ toàn bộ chương trình và không cam kết khớp từng tuần/sách. Phụ huynh có thể duyệt toàn bộ nội dung và đáp án trong `NGAN-HANG-TIENG-VIET.md`.
-
-Kiểm tra: 100 mục tiếng Việt có 3 lựa chọn khác nhau, văn bản Unicode chuẩn, không trùng câu trong từng lớp; chọn môn, trộn môn và khôi phục thứ tự đạt kiểm thử. Đã đọc rà soát đáp án bằng tay; kiểm thử tự động không thay thế thẩm định sư phạm. Kiểm thử Toán/tiến độ cũ vẫn đạt. APK đã build, xác minh chữ ký và alignment; chưa thử bản mới trên TV thật.
-
-## Cập nhật 0.8 — tên ứng dụng
-
-Tên mới **Học Rồi Xem TV**, dòng mô tả **Quản lý giờ xem, mở khóa bằng kiến thức.** Đổi tên trên launcher, giao diện, thông báo và banner. Giữ package `vn.tvquiz` và khóa ký để cài đè, giữ PIN, tiến độ và cấu hình.
-
-## Phiên bản 1.0
-
-Bỏ nhãn thử nghiệm trong ứng dụng và thông báo. Phiên bản Android hiển thị 1.0 (versionCode 9). APK chính thức để cài trực tiếp: `out/Hoc-Roi-Xem-TV-v1.0.1.apk`; script build xuất đúng tên này. Giữ package và khóa ký để cài đè, bảo toàn PIN và cài đặt. Chưa phát hành lên Play Store. Các mục 0.x ở trên là lịch sử thay đổi.
-
-## Bản vá 1.0.1 — che mã PIN
+### v1.0.1 — che mã PIN
 
 Ô đăng nhập/tạo/xác nhận/đổi PIN luôn hiển thị dấu chấm ngay khi gõ, không lộ ký tự cuối. Tắt chế độ nhập toàn màn hình của bàn phím và xóa ô nhập khi đóng. Cài đè APK 1.0.1 để giữ PIN và thiết lập. Đã kiểm thử lớp che ký tự và xác minh PIN; cần kiểm tra trực tiếp với bàn phím Sony. Nếu PIN trước đó đã bị bé nhìn thấy, hãy đổi PIN sau cập nhật.
