@@ -6,9 +6,9 @@
 
 ## Tải APK
 
-**[⬇ Tải Học Rồi Xem TV v1.0](https://github.com/dinhchi27/hoc-roi-xem-tv/releases/download/v1.0/Hoc-Roi-Xem-TV-v1.0.apk)**
+**[⬇ Tải Học Rồi Xem TV v1.0.1](https://github.com/dinhchi27/hoc-roi-xem-tv/releases/download/v1.0.1/Hoc-Roi-Xem-TV-v1.0.1.apk)**
 
-[Xem bản phát hành v1.0](https://github.com/dinhchi27/hoc-roi-xem-tv/releases/tag/v1.0). Repo đang riêng tư: cần đăng nhập GitHub bằng tài khoản có quyền truy cập để tải.
+[Xem bản phát hành v1.0.1](https://github.com/dinhchi27/hoc-roi-xem-tv/releases/tag/v1.0.1). Repo đang riêng tư: cần đăng nhập GitHub bằng tài khoản có quyền truy cập để tải.
 
 Chép APK vào USB và mở bằng trình quản lý tệp trên TV để cài. Có thể cài đè bản cũ, giữ PIN và cài đặt. Xem [hướng dẫn chi tiết](HUONG-DAN.md).
 
@@ -37,7 +37,7 @@ Script hiện cấu hình cho macOS, JDK 21 và Android SDK tải riêng:
 - Android API 30: `.tools/platform/android-11/android.jar`.
 - Android Build Tools 35.0.0: `.tools/build-tools35/android-15/`.
 
-Chạy `./build.sh`; kết quả `out/Hoc-Roi-Xem-TV-v1.0.apk`.
+Chạy `./build.sh`; kết quả `out/Hoc-Roi-Xem-TV-v1.0.1.apk`.
 
 SDK, file build và khóa ký **không được đưa lên Git**. Script tạo khóa thử nghiệm cục bộ nếu chưa có; APK ký bằng khóa mới không thể cài đè bản đã ký bằng khóa khác. Để cập nhật bản đang cài trên TV phải sử dụng khóa gốc được giữ riêng trên máy phát triển.
 

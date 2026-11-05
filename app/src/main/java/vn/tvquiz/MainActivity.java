@@ -84,7 +84,7 @@ public class MainActivity extends Activity {
   label(this,controls,"Tự theo dõi YouTube sau khi thiết lập. Không cần mở Học Rồi Xem TV mỗi lần xem.",16).setTextColor(Color.rgb(165,190,212));
   button(this,controls,ParentGate.exists(this)?"Quản trị phụ huynh • PIN":"Thiết lập PIN phụ huynh",v->ParentGate.enter(this,()->{ensureService();showAdmin();}));
   label(this,controls,"Đổi thời gian • Tạm nghỉ • Bật/tắt\nCài đặt được bảo vệ bằng mã PIN.",14);
-  label(this,root,"↑ ↓ ← →  Di chuyển     •     OK  Chọn                                      PHIÊN BẢN 1.0",12).setTextColor(Color.rgb(165,190,212));
+  label(this,root,"↑ ↓ ← →  Di chuyển     •     OK  Chọn                                      PHIÊN BẢN 1.0.1",12).setTextColor(Color.rgb(165,190,212));
   label(this,root,"Tính thời gian khi YouTube đang mở, kể cả lúc tạm dừng. Câu hỏi dùng ngoại tuyến. Có thể thoát bằng Home.",12).setTextColor(Color.rgb(165,190,212));
   startButton.requestFocus();
  }

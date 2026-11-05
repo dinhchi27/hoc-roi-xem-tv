@@ -21,8 +21,20 @@ final class ParentGate {
  });}
  interface Submit{boolean submit(String value);}
  static void prompt(Activity a,String title,Submit submit){
-  EditText input=new EditText(a);input.setInputType(InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_VARIATION_PASSWORD);input.setSingleLine(true);input.setTextSize(24);input.setPadding(24,16,24,16);
+  EditText input=new EditText(a);
+  // Configure single-line before password transformation; some TV widgets reset it.
+  input.setSingleLine(true);
+  input.setInputType(InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_VARIATION_PASSWORD);
+  input.setTransformationMethod(new android.text.method.PasswordTransformationMethod(){
+   @Override public CharSequence getTransformation(CharSequence source,android.view.View view){return new MaskedPin(source);}
+  });
+  input.setImeOptions(android.view.inputmethod.EditorInfo.IME_FLAG_NO_EXTRACT_UI|android.view.inputmethod.EditorInfo.IME_FLAG_NO_FULLSCREEN|android.view.inputmethod.EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING);
+  input.setImportantForAutofill(android.view.View.IMPORTANT_FOR_AUTOFILL_NO_EXCLUDE_DESCENDANTS);
+  input.setLongClickable(false);input.setTextIsSelectable(false);
+  input.setFilters(new android.text.InputFilter[]{new android.text.InputFilter.LengthFilter(8)});
+  input.setTextSize(24);input.setPadding(24,16,24,16);
   AlertDialog dialog=new AlertDialog.Builder(a).setTitle(title).setView(input).setPositiveButton("Xác nhận",null).setNegativeButton("Hủy",null).create();
+  dialog.setOnDismissListener(d->input.setText(""));
   dialog.setOnShowListener(d->dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(v->{if(submit.submit(input.getText().toString()))dialog.dismiss();else input.setText("");}));((MainActivity)a).track(dialog);dialog.show();input.requestFocus();
  }
 }

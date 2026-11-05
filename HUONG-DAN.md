@@ -1,6 +1,6 @@
-# Học Rồi Xem TV 1.0 — chạy nền và quản trị phụ huynh
+# Học Rồi Xem TV 1.0.1 — chạy nền và quản trị phụ huynh
 
-APK: `out/Hoc-Roi-Xem-TV-v1.0.apk`. Cài đè bản cũ để giữ quyền đã cấp. Package `vn.tvquiz`, giữ khóa ký của các bản trước. Không cần gỡ app.
+APK: `out/Hoc-Roi-Xem-TV-v1.0.1.apk`. Cài đè bản cũ để giữ quyền đã cấp. Package `vn.tvquiz`, giữ khóa ký của các bản trước. Không cần gỡ app.
 
 ## Thiết lập một lần
 
@@ -43,7 +43,7 @@ App tính thời gian YouTube ở phía trước, kể cả menu hoặc video t�
 
 ```sh
 adb connect DIA_CHI_IP_TV:5555
-adb install -r out/Hoc-Roi-Xem-TV-v1.0.apk
+adb install -r out/Hoc-Roi-Xem-TV-v1.0.1.apk
 adb shell appops set vn.tvquiz SYSTEM_ALERT_WINDOW allow
 adb shell appops set vn.tvquiz GET_USAGE_STATS allow
 ```
@@ -94,4 +94,8 @@ Tên mới **Học Rồi Xem TV**, dòng mô tả **Quản lý giờ xem, mở k
 
 ## Phiên bản 1.0
 
-Bỏ nhãn thử nghiệm trong ứng dụng và thông báo. Phiên bản Android hiển thị 1.0 (versionCode 9). APK chính thức để cài trực tiếp: `out/Hoc-Roi-Xem-TV-v1.0.apk`; script build xuất đúng tên này. Giữ package và khóa ký để cài đè, bảo toàn PIN và cài đặt. Chưa phát hành lên Play Store. Các mục 0.x ở trên là lịch sử thay đổi.
+Bỏ nhãn thử nghiệm trong ứng dụng và thông báo. Phiên bản Android hiển thị 1.0 (versionCode 9). APK chính thức để cài trực tiếp: `out/Hoc-Roi-Xem-TV-v1.0.1.apk`; script build xuất đúng tên này. Giữ package và khóa ký để cài đè, bảo toàn PIN và cài đặt. Chưa phát hành lên Play Store. Các mục 0.x ở trên là lịch sử thay đổi.
+
+## Bản vá 1.0.1 — che mã PIN
+
+Ô đăng nhập/tạo/xác nhận/đổi PIN luôn hiển thị dấu chấm ngay khi gõ, không lộ ký tự cuối. Tắt chế độ nhập toàn màn hình của bàn phím và xóa ô nhập khi đóng. Cài đè APK 1.0.1 để giữ PIN và thiết lập. Đã kiểm thử lớp che ký tự và xác minh PIN; cần kiểm tra trực tiếp với bàn phím Sony. Nếu PIN trước đó đã bị bé nhìn thấy, hãy đổi PIN sau cập nhật.
