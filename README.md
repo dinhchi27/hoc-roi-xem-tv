@@ -8,8 +8,6 @@
 
 **[⬇ Tải Học Rồi Xem TV v1.0.1](https://github.com/dinhchi27/hoc-roi-xem-tv/releases/download/v1.0.1/Hoc-Roi-Xem-TV-v1.0.1.apk)**
 
-[Xem bản phát hành v1.0.1](https://github.com/dinhchi27/hoc-roi-xem-tv/releases/tag/v1.0.1). Repo đang riêng tư: cần đăng nhập GitHub bằng tài khoản có quyền truy cập để tải.
-
 Chép APK vào USB và mở bằng trình quản lý tệp trên TV để cài. Có thể cài đè bản cũ, giữ PIN và cài đặt. Xem [hướng dẫn chi tiết](HUONG-DAN.md).
 
 ## Tính năng
