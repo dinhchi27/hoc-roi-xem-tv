@@ -73,4 +73,4 @@ adb shell appops set vn.tvquiz GET_USAGE_STATS allow
 
 ### v1.0.1 — che mã PIN
 
-Ô đăng nhập/tạo/xác nhận/đổi PIN luôn hiển thị dấu chấm ngay khi gõ, không lộ ký tự cuối. Tắt chế độ nhập toàn màn hình của bàn phím và xóa ô nhập khi đóng. Cài đè APK 1.0.1 để giữ PIN và thiết lập. Đã kiểm thử lớp che ký tự và xác minh PIN; cần kiểm tra trực tiếp với bàn phím Sony. Nếu PIN trước đó đã bị bé nhìn thấy, hãy đổi PIN sau cập nhật.
+Ô đăng nhập/tạo/xác nhận/đổi PIN luôn hiển thị dấu chấm ngay khi gõ, không lộ ký tự cuối. Tắt chế độ nhập toàn màn hình của bàn phím và xóa ô nhập khi đóng. Cài đè APK 1.0.1 để giữ PIN và thiết lập. Đã kiểm thử lớp che ký tự và xác minh PIN. Nếu PIN trước đó đã bị bé nhìn thấy, hãy đổi PIN sau cập nhật.

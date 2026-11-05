@@ -15,7 +15,7 @@
 
 **[⬇ Tải Học Rồi Xem TV v1.0.1](https://github.com/dinhchi27/hoc-roi-xem-tv/releases/download/v1.0.1/Hoc-Roi-Xem-TV-v1.0.1.apk)**
 
-Bản **1.0.1** sửa lỗi hiển thị PIN: che ngay mọi chữ số khi nhập, kể cả ký tự vừa gõ. Bản vá đã được kiểm thử phần xử lý PIN và chữ ký APK; cần kiểm tra trực tiếp trên TV.
+Bản **1.0.1** sửa lỗi hiển thị PIN: che ngay mọi chữ số khi nhập, kể cả ký tự vừa gõ. Bản vá đã được kiểm thử phần xử lý PIN và xác minh chữ ký APK.
 
 ## Cách cài trên Android TV
 
