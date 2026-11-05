@@ -1,24 +1,26 @@
-# Học Rồi Xem TV
+# 📺 Học Rồi Xem TV — Phiên bản 1.0.1
 
-**Quản lý giờ xem, mở khóa bằng kiến thức.**
+*Quản lý giờ xem, mở khóa bằng kiến thức.*
 
-Ứng dụng Android TV 1.0 giúp phụ huynh đặt thời gian xem YouTube, sau đó yêu cầu bé trả lời câu hỏi để xem tiếp.
+- 🛠️ App Android TV mình tự phát triển, giúp phụ huynh quản lý bé xem YouTube.
+- ⏱️ Tự đếm thời gian khi mở YouTube sau khi thiết lập lần đầu; đến giờ sẽ hiện câu hỏi.
+- 🔓 Bé trả lời đúng đủ **1–20 câu** để xem tiếp. Trả lời sai đổi câu, giữ số câu đã đúng.
+- 📚 **888 câu Toán + 100 câu Tiếng Việt**, chia theo lớp **1–5**, dùng ngoại tuyến. Có thể chọn từng môn hoặc kết hợp.
+- 🔐 Quản trị bằng **PIN**: chọn thời gian, số câu, lớp học, môn học và tạm nghỉ.
+- 🎮 Điều khiển bằng remote, lưu tiến độ làm bài khi về Home hoặc khởi động lại TV.
+- 📦 Cài bằng APK; đã thử các bản trước trên **Sony Android TV 10**, chưa có trên Play Store.
+- ℹ️ Không khóa nút Home hay cài đặt hệ thống; khả năng chạy nền phụ thuộc từng TV.
 
 ## Tải APK
 
 **[⬇ Tải Học Rồi Xem TV v1.0.1](https://github.com/dinhchi27/hoc-roi-xem-tv/releases/download/v1.0.1/Hoc-Roi-Xem-TV-v1.0.1.apk)**
 
-Chép APK vào USB và mở bằng trình quản lý tệp trên TV để cài. Có thể cài đè bản cũ, giữ PIN và cài đặt. Xem [hướng dẫn chi tiết](HUONG-DAN.md).
+Bản **1.0.1** sửa lỗi hiển thị PIN: che ngay mọi chữ số khi nhập, kể cả ký tự vừa gõ. Bản vá đã được kiểm thử phần xử lý PIN và chữ ký APK; cần kiểm tra trực tiếp trên TV.
 
-## Tính năng
+Chép APK vào USB và mở bằng trình quản lý tệp trên TV để cài. Có thể cài đè bản cũ, giữ PIN và cài đặt. Sau khi cài, mở app để thiết lập PIN và cấp hai quyền cần thiết.
 
-- Theo dõi YouTube bằng dịch vụ nền sau khi thiết lập lần đầu.
-- Quản trị có PIN: thời gian xem, tạm nghỉ, lớp học, môn học và 1–20 câu đúng mỗi lượt.
-- 888 câu Toán và 100 câu Tiếng Việt cho lớp 1–5, dùng ngoại tuyến.
-- Điều khiển bằng remote; lưu tiến độ làm bài.
-- Logo và giao diện dành cho TV.
-
-Xem [hướng dẫn cài đặt](HUONG-DAN.md) và [ngân hàng Tiếng Việt](NGAN-HANG-TIENG-VIET.md).
+- [Hướng dẫn cài đặt và sử dụng](HUONG-DAN.md)
+- [Ngân hàng Tiếng Việt và đáp án](NGAN-HANG-TIENG-VIET.md)
 
 ## Cấu trúc
 
