@@ -1,0 +1,14 @@
+{
+  "tag_name": "v1.2.1",
+  "draft": false,
+  "prerelease": false,
+  "body": "Cải thiện kiểm tra cập nhật: nguồn thông tin tĩnh, API dự phòng và thông báo lỗi chi tiết.",
+  "assets": [
+    {
+      "name": "Hoc-Roi-Xem-TV-v1.2.1.apk",
+      "size": 66095,
+      "digest": "sha256:72a8d56467fd252ba5b7c898f1bab9523791e1f36eec8063c5e56f33f6933587",
+      "browser_download_url": "https://github.com/dinhchi27/hoc-roi-xem-tv/releases/download/v1.2.1/Hoc-Roi-Xem-TV-v1.2.1.apk"
+    }
+  ]
+}
