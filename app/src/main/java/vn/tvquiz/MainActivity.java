@@ -3,6 +3,7 @@ import android.app.*;import android.app.usage.*;import android.content.*;import 
 public class MainActivity extends Activity {
  final java.util.ArrayList<Dialog> dialogs=new java.util.ArrayList<>();
  <T extends Dialog> T track(T dialog){dialogs.add(dialog);return dialog;}
+ AppUpdater updater;
  boolean admin=false; TextView timer; TextView status; Button overlayPermission,usagePermission; Handler handler=new Handler();
  final Runnable refresh=new Runnable(){public void run(){
   boolean draw=Settings.canDrawOverlays(MainActivity.this),usage=usageAllowed(MainActivity.this);
@@ -63,7 +64,7 @@ public class MainActivity extends Activity {
  }
  public void onCreate(Bundle b){
   super.onCreate(b);getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-  showHome();
+  updater=new AppUpdater(this);showHome();
  }
  void showHome(){
   admin=false;overlayPermission=null;usagePermission=null;
@@ -84,7 +85,7 @@ public class MainActivity extends Activity {
   label(this,controls,"Tự theo dõi YouTube sau khi thiết lập. Không cần mở Học Rồi Xem TV mỗi lần xem.",16).setTextColor(Color.rgb(165,190,212));
   button(this,controls,ParentGate.exists(this)?"Quản trị phụ huynh • PIN":"Thiết lập PIN phụ huynh",v->ParentGate.enter(this,()->{ensureService();showAdmin();}));
   label(this,controls,"Đổi thời gian • Tạm nghỉ • Bật/tắt\nCài đặt được bảo vệ bằng mã PIN.",14);
-  label(this,root,"↑ ↓ ← →  Di chuyển     •     OK  Chọn                                      PHIÊN BẢN 1.0.1",12).setTextColor(Color.rgb(165,190,212));
+  label(this,root,"↑ ↓ ← →  Di chuyển     •     OK  Chọn                                      PHIÊN BẢN 1.1.0",12).setTextColor(Color.rgb(165,190,212));
   label(this,root,"Tính thời gian khi YouTube đang mở, kể cả lúc tạm dừng. Câu hỏi dùng ngoại tuyến. Có thể thoát bằng Home.",12).setTextColor(Color.rgb(165,190,212));
   startButton.requestFocus();
  }
@@ -124,6 +125,7 @@ public class MainActivity extends Activity {
   button(this,root,until>System.currentTimeMillis()?"Đang tạm nghỉ — còn "+duration(until-System.currentTimeMillis()):"Tạm nghỉ đếm giờ…",v->choosePause());
   if(until>System.currentTimeMillis())button(this,root,"Kết thúc tạm nghỉ ngay",v->{prefs().edit().putLong("pause_until",0).commit();changed();});
   button(this,root,"Thử một lượt câu hỏi",v->start(true));
+  button(this,root,"Kiểm tra cập nhật ứng dụng",v->updater.check(true));
   button(this,root,"Đổi mã PIN",v->ParentGate.set(this,()->Toast.makeText(this,"Đã đổi PIN",0).show()));
   button(this,root,"Khóa quản trị và quay lại",v->showHome());
  }
@@ -155,7 +157,8 @@ public class MainActivity extends Activity {
   AlertDialog dialog=new AlertDialog.Builder(this).setTitle(title).setView(input).setPositiveButton("Lưu",null).setNegativeButton("Hủy",null).create();
   dialog.setOnShowListener(d->dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(v->{try{int n=Integer.parseInt(input.getText().toString());if(n<min||n>max)throw new NumberFormatException();action.apply(n);dialog.dismiss();}catch(NumberFormatException e){input.setError("Nhập từ "+min+" đến "+max);}}));track(dialog);dialog.show();
  }
+ @Override protected void onDestroy(){updater.destroy();super.onDestroy();}
  @Override public void onBackPressed(){if(admin)showHome();else super.onBackPressed();}
- protected void onResume(){super.onResume();ensureService();handler.removeCallbacks(refresh);handler.post(refresh);}
- protected void onPause(){handler.removeCallbacks(refresh);for(Dialog dialog:dialogs)dialog.dismiss();dialogs.clear();if(admin)showHome();super.onPause();}
+ protected void onResume(){super.onResume();updater.resume();ensureService();handler.removeCallbacks(refresh);handler.post(refresh);}
+ protected void onPause(){updater.pause();handler.removeCallbacks(refresh);for(Dialog dialog:dialogs)dialog.dismiss();dialogs.clear();if(admin)showHome();super.onPause();}
 }

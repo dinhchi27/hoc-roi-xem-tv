@@ -1,6 +1,6 @@
-# Học Rồi Xem TV 1.0.1 — chạy nền và quản trị phụ huynh
+# Học Rồi Xem TV 1.1.0 — chạy nền và quản trị phụ huynh
 
-APK: `out/Hoc-Roi-Xem-TV-v1.0.1.apk`. Cài đè bản cũ để giữ quyền đã cấp. Package `vn.tvquiz`, giữ khóa ký của các bản trước. Không cần gỡ app.
+APK: `out/Hoc-Roi-Xem-TV-v1.1.0.apk`. Cài đè bản cũ để giữ quyền đã cấp. Package `vn.tvquiz`, giữ khóa ký của các bản trước. Không cần gỡ app.
 
 ## Thiết lập một lần
 
@@ -51,7 +51,7 @@ App tính thời gian YouTube ở phía trước, kể cả menu hoặc video t�
 
 ```sh
 adb connect DIA_CHI_IP_TV:5555
-adb install -r out/Hoc-Roi-Xem-TV-v1.0.1.apk
+adb install -r out/Hoc-Roi-Xem-TV-v1.1.0.apk
 adb shell appops set vn.tvquiz SYSTEM_ALERT_WINDOW allow
 adb shell appops set vn.tvquiz GET_USAGE_STATS allow
 ```
@@ -74,3 +74,18 @@ adb shell appops set vn.tvquiz GET_USAGE_STATS allow
 ### v1.0.1 — che mã PIN
 
 Ô đăng nhập/tạo/xác nhận/đổi PIN luôn hiển thị dấu chấm ngay khi gõ, không lộ ký tự cuối. Tắt chế độ nhập toàn màn hình của bàn phím và xóa ô nhập khi đóng. Cài đè APK 1.0.1 để giữ PIN và thiết lập. Đã kiểm thử lớp che ký tự và xác minh PIN. Nếu PIN trước đó đã bị bé nhìn thấy, hãy đổi PIN sau cập nhật.
+
+### v1.1.0 — cập nhật từ GitHub Releases
+
+- Kiểm tra bản chính thức khi mở app; gộp các lần kiểm tra tự động trong 60 giây. Có nút kiểm tra thủ công trong quản trị.
+- Thông báo phiên bản và nội dung thay đổi; chọn cập nhật hoặc để sau. Nhập PIN trước khi tải.
+- Tải nền có tiến độ và nút hủy, kiểm tra dung lượng, SHA-256 từ GitHub, package, versionCode tăng, versionName khớp và chữ ký cùng app đang cài.
+- Xin quyền cài APK từ app; trình cài đặt Android yêu cầu người dùng xác nhận. Cài đè giữ dữ liệu.
+- Nếu rời app trong lúc tải/cấp quyền, khi quay lại phải xác minh PIN trước khi mở trình cài đặt. Nếu tiến trình bị đóng, kiểm tra và tải lại trong trang phụ huynh.
+- Không có mạng vẫn dùng câu hỏi ngoại tuyến. Chỉ chức năng kiểm tra/tải cập nhật cần Internet.
+
+Bản cũ chưa hỗ trợ cập nhật trong app: cài APK 1.1.0 bằng USB/LocalSend một lần. Sau đó dùng **Quản trị phụ huynh → Kiểm tra cập nhật ứng dụng** hoặc thông báo lúc mở app.
+
+Quy trình phát hành tiếp theo: tăng versionCode và versionName, build bằng khóa ký gốc, tạo GitHub Release chính thức có tag `vX.Y.Z`, đính kèm `Hoc-Roi-Xem-TV-vX.Y.Z.apk`. GitHub cung cấp digest SHA-256 cho asset; app sẽ từ chối asset thiếu digest hoặc sai tên. Không dùng draft/prerelease để phân phối bản cập nhật này.
+
+Đã kiểm thử chính sách phiên bản/URL, toàn bộ kiểm thử PIN và câu hỏi, kiểm tra metadata GitHub thực tế, build và xác minh APK. Cần kiểm tra luồng cấp quyền/cài đặt trên TV thật; không có thiết bị Android kết nối trong phiên phát triển.

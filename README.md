@@ -1,4 +1,4 @@
-# 📺 Học Rồi Xem TV — Phiên bản 1.0.1
+# 📺 Học Rồi Xem TV — Phiên bản 1.1.0
 
 *Quản lý giờ xem, mở khóa bằng kiến thức.*
 
@@ -13,9 +13,20 @@
 
 ## Tải APK
 
-**[⬇ Tải Học Rồi Xem TV v1.0.1](https://github.com/dinhchi27/hoc-roi-xem-tv/releases/download/v1.0.1/Hoc-Roi-Xem-TV-v1.0.1.apk)**
+**[⬇ Tải Học Rồi Xem TV v1.1.0](https://github.com/dinhchi27/hoc-roi-xem-tv/releases/download/v1.1.0/Hoc-Roi-Xem-TV-v1.1.0.apk)**
 
-Bản **1.0.1** sửa lỗi hiển thị PIN: che ngay mọi chữ số khi nhập, kể cả ký tự vừa gõ. Bản vá đã được kiểm thử phần xử lý PIN và xác minh chữ ký APK.
+Bản **1.1.0** bổ sung cập nhật ngay trong app từ GitHub Releases. Khi có bản mới, phụ huynh nhập PIN để tải và xác nhận cài đặt trên Android TV.
+
+## Cập nhật ngay trên TV
+
+- Cài bản **1.1.0** bằng USB hoặc LocalSend một lần để có chức năng cập nhật.
+- Mỗi khi mở app, ứng dụng kiểm tra bản chính thức mới nhất trên GitHub (các lần mở cách nhau dưới 60 giây được gộp để hạn chế truy vấn).
+- Khi có bản mới, chọn **Cập nhật → nhập PIN**. Có thể chọn **Để sau**.
+- App tải APK và kiểm tra SHA-256, package, phiên bản tăng và cùng chữ ký trước khi mở trình cài đặt.
+- Lần đầu, cấp quyền **Cài ứng dụng không rõ nguồn gốc** cho Học Rồi Xem TV. Quay lại app, xác nhận bằng PIN rồi chọn **Cài đặt** trên Android.
+- Có nút **Kiểm tra cập nhật ứng dụng** trong trang phụ huynh. Mất mạng không ảnh hưởng câu hỏi ngoại tuyến.
+
+Android yêu cầu xác nhận cài đặt; app không cài âm thầm. Chức năng cập nhật dùng Internet để kết nối GitHub, không gửi PIN hoặc tiến độ học tập.
 
 ## Cách cài trên Android TV
 
@@ -32,7 +43,7 @@ Bản **1.0.1** sửa lỗi hiển thị PIN: che ngay mọi chữ số khi nh�
 1. **Trên điện thoại:** cài LocalSend từ App Store (iPhone/iOS) hoặc Google Play (Android). Tải APK Học Rồi Xem TV ở phía trên. Trên iPhone, lưu APK vào ứng dụng **Tệp / Files**; chỉ gửi tệp sang TV, không cài APK trên iPhone.
 2. **Trên TV:** tìm và cài LocalSend trong Google Play nếu có trên thiết bị. Nếu không tìm thấy, có thể cài APK LocalSend từ nguồn chính thức qua USB trước.
 3. Kết nối điện thoại và TV vào **cùng mạng nhà** (cùng Wi-Fi; TV dùng dây LAN cùng router cũng được). Mở LocalSend trên cả hai thiết bị. Cho phép quyền **Mạng cục bộ / Local Network** trên iPhone khi được hỏi.
-4. Trên điện thoại, vào **Gửi / Send → Tệp / Files**, chọn `Hoc-Roi-Xem-TV-v1.0.1.apk`, rồi chọn tên TV trong danh sách thiết bị.
+4. Trên điện thoại, vào **Gửi / Send → Tệp / Files**, chọn `Hoc-Roi-Xem-TV-v1.1.0.apk`, rồi chọn tên TV trong danh sách thiết bị.
 5. Trên TV, **chấp nhận nhận tệp** và chờ gửi xong. Ghi nhớ thư mục lưu được LocalSend hiển thị hoặc cấu hình trên TV.
 6. Mở APK vừa nhận; nếu LocalSend không mở được trình cài đặt, dùng trình quản lý tệp trên TV vào thư mục lưu để mở APK.
 7. Khi TV hỏi, cấp quyền **Cài ứng dụng không rõ nguồn gốc** cho ứng dụng đang mở APK (LocalSend hoặc trình quản lý tệp), rồi chọn **Cài đặt**.
@@ -59,7 +70,7 @@ Script hiện cấu hình cho macOS, JDK 21 và Android SDK tải riêng:
 - Android API 30: `.tools/platform/android-11/android.jar`.
 - Android Build Tools 35.0.0: `.tools/build-tools35/android-15/`.
 
-Chạy `./build.sh`; kết quả `out/Hoc-Roi-Xem-TV-v1.0.1.apk`.
+Chạy `./build.sh`; kết quả `out/Hoc-Roi-Xem-TV-v1.1.0.apk`.
 
 SDK, file build và khóa ký **không được đưa lên Git**. Script tạo khóa thử nghiệm cục bộ nếu chưa có; APK ký bằng khóa mới không thể cài đè bản đã ký bằng khóa khác. Để cập nhật bản đang cài trên TV phải sử dụng khóa gốc được giữ riêng trên máy phát triển.
 
