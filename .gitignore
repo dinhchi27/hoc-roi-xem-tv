@@ -1,0 +1,12 @@
+.tools/
+out/
+.DS_Store
+*.apk
+*.jks
+*.keystore
+*.p12
+*.pem
+.env
+.env.*
+local.properties
+.idea/
