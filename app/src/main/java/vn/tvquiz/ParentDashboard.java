@@ -55,7 +55,7 @@ final class ParentDashboard {
    LinearLayout r=row();tile(r,"overlay","Hiển thị câu hỏi",Settings.canDrawOverlays(a)?"Đã cấp quyền":"Cần cấp quyền","OK để mở cài đặt Android",()->a.settings(new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,Uri.parse("package:"+a.getPackageName()))));
    tile(r,"usage","Nhận biết YouTube",MainActivity.usageAllowed(a)?"Đã cấp quyền":"Cần cấp quyền","Cho phép tính thời gian xem",()->a.settings(new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS)));
    r=row();tile(r,"pin","Bảo mật","Đổi mã PIN","Giữ riêng mã PIN của phụ huynh",()->ParentGate.set(a,()->Toast.makeText(a,"Đã đổi PIN",0).show()));
-   tile(r,"update","Phiên bản 1.2.0","Kiểm tra cập nhật","Tải bản mới từ GitHub",()->a.updater.check(true));
+   tile(r,"update","Phiên bản 1.2.1","Kiểm tra cập nhật","Tải bản mới từ GitHub",()->a.updater.check(true));
   }
   // Explicit horizontal focus links make navigation predictable on a D-pad.
   View[] cells=tiles.values().toArray(new View[0]);for(int i=0;i<cells.length;i++){cells[i].setNextFocusLeftId(i%2==0?nav[tab].getId():cells[i-1].getId());cells[i].setNextFocusRightId(i%2==0&&i+1<cells.length?cells[i+1].getId():cells[i].getId());if(i>=2)cells[i].setNextFocusUpId(cells[i-2].getId());if(i+2<cells.length)cells[i].setNextFocusDownId(cells[i+2].getId());}

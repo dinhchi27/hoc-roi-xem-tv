@@ -1,6 +1,6 @@
-# Học Rồi Xem TV 1.2.0 — chạy nền và quản trị phụ huynh
+# Học Rồi Xem TV 1.2.1 — chạy nền và quản trị phụ huynh
 
-APK: `out/Hoc-Roi-Xem-TV-v1.2.0.apk`. Cài đè bản cũ để giữ quyền đã cấp. Package `vn.tvquiz`, giữ khóa ký của các bản trước. Không cần gỡ app.
+APK: `out/Hoc-Roi-Xem-TV-v1.2.1.apk`. Cài đè bản cũ để giữ quyền đã cấp. Package `vn.tvquiz`, giữ khóa ký của các bản trước. Không cần gỡ app.
 
 ## Thiết lập một lần
 
@@ -51,7 +51,7 @@ App tính thời gian YouTube ở phía trước, kể cả menu hoặc video t�
 
 ```sh
 adb connect DIA_CHI_IP_TV:5555
-adb install -r out/Hoc-Roi-Xem-TV-v1.2.0.apk
+adb install -r out/Hoc-Roi-Xem-TV-v1.2.1.apk
 adb shell appops set vn.tvquiz SYSTEM_ALERT_WINDOW allow
 adb shell appops set vn.tvquiz GET_USAGE_STATS allow
 ```
@@ -100,3 +100,16 @@ Quy trình phát hành tiếp theo: tăng versionCode và versionName, build b�
 - Nút Khóa & về trang chủ luôn có trong menu. Back vẫn khóa trang quản trị.
 
 APK đã build, xác minh chữ ký và alignment. Bố cục dùng dp và chiều cao tự giãn, phần nội dung có thể cuộn khi tăng cỡ chữ; cần kiểm tra hình ảnh và remote trên TV thật.
+
+### v1.2.1 — cải thiện kết nối cập nhật
+
+- Đọc `updates/latest.json` từ GitHub Raw trước; nếu không đọc được thì dùng GitHub Releases API dự phòng.
+- Giữ kiểm tra SHA-256, phiên bản, nguồn tải và chữ ký APK. Không hạ điều kiện bảo mật khi chuyển nguồn.
+- Thông báo lỗi cụ thể trong hộp thoại: DNS, HTTPS/ngày giờ TV, hết thời gian chờ, HTTP, metadata hoặc APK không hợp lệ.
+- Dùng header phù hợp khi lấy metadata và khi tải APK, tắt cache kết nối và đóng kết nối khi lỗi.
+
+Nếu bản cũ không cập nhật được, dùng LocalSend/USB cài đè `Hoc-Roi-Xem-TV-v1.2.1.apk`, giữ nguyên PIN và dữ liệu. Nếu vẫn gặp lỗi, ghi lại nội dung hộp thoại để xác định nguyên nhân trên TV.
+
+Đã kiểm thử parser trên dữ liệu thật, xử lý metadata không hợp lệ, chính sách URL/phiên bản và tải APK thật qua cùng mã Java trên máy phát triển. Chưa có log/thiết bị TV để xác định nguyên nhân ban đầu tại nhà người dùng.
+
+Khi phát hành: build và tải APK lên Release trước; chạy `python3 scripts/update_manifest.py` rồi đẩy `updates/latest.json`. Chỉnh `body` trong manifest nếu cần nội dung cập nhật riêng. Không sửa APK sau khi tạo digest; phải tạo lại manifest nếu build lại.
