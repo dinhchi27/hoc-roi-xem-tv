@@ -4,6 +4,14 @@
 
 Ứng dụng Android TV 1.0 giúp phụ huynh đặt thời gian xem YouTube, sau đó yêu cầu bé trả lời câu hỏi để xem tiếp.
 
+## Tải APK
+
+**[⬇ Tải Học Rồi Xem TV v1.0](https://github.com/dinhchi27/hoc-roi-xem-tv/releases/download/v1.0/Hoc-Roi-Xem-TV-v1.0.apk)**
+
+[Xem bản phát hành v1.0](https://github.com/dinhchi27/hoc-roi-xem-tv/releases/tag/v1.0). Repo đang riêng tư: cần đăng nhập GitHub bằng tài khoản có quyền truy cập để tải.
+
+Chép APK vào USB và mở bằng trình quản lý tệp trên TV để cài. Có thể cài đè bản cũ, giữ PIN và cài đặt. Xem [hướng dẫn chi tiết](HUONG-DAN.md).
+
 ## Tính năng
 
 - Theo dõi YouTube bằng dịch vụ nền sau khi thiết lập lần đầu.
