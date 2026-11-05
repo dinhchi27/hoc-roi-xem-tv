@@ -16,7 +16,7 @@ cp out/resources.apk out/unsigned.apk
 if [ ! -f .tools/test-signing.jks ]; then
  keytool -genkeypair -keystore .tools/test-signing.jks -storepass android -keypass android -alias tvquiz -keyalg RSA -keysize 2048 -validity 10000 -dname 'CN=TV Quiz Test'
 fi
-"$BT/apksigner" sign --ks .tools/test-signing.jks --ks-key-alias tvquiz --ks-pass pass:android --key-pass pass:android --out out/Hoc-Roi-Xem-TV-v1.1.0.apk out/aligned.apk
-"$BT/apksigner" verify --verbose out/Hoc-Roi-Xem-TV-v1.1.0.apk
-"$BT/aapt" dump badging out/Hoc-Roi-Xem-TV-v1.1.0.apk
-shasum -a 256 out/Hoc-Roi-Xem-TV-v1.1.0.apk
+"$BT/apksigner" sign --ks .tools/test-signing.jks --ks-key-alias tvquiz --ks-pass pass:android --key-pass pass:android --out out/Hoc-Roi-Xem-TV-v1.2.0.apk out/aligned.apk
+"$BT/apksigner" verify --verbose out/Hoc-Roi-Xem-TV-v1.2.0.apk
+"$BT/aapt" dump badging out/Hoc-Roi-Xem-TV-v1.2.0.apk
+shasum -a 256 out/Hoc-Roi-Xem-TV-v1.2.0.apk

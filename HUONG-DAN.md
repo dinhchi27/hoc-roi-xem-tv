@@ -1,6 +1,6 @@
-# Học Rồi Xem TV 1.1.0 — chạy nền và quản trị phụ huynh
+# Học Rồi Xem TV 1.2.0 — chạy nền và quản trị phụ huynh
 
-APK: `out/Hoc-Roi-Xem-TV-v1.1.0.apk`. Cài đè bản cũ để giữ quyền đã cấp. Package `vn.tvquiz`, giữ khóa ký của các bản trước. Không cần gỡ app.
+APK: `out/Hoc-Roi-Xem-TV-v1.2.0.apk`. Cài đè bản cũ để giữ quyền đã cấp. Package `vn.tvquiz`, giữ khóa ký của các bản trước. Không cần gỡ app.
 
 ## Thiết lập một lần
 
@@ -51,7 +51,7 @@ App tính thời gian YouTube ở phía trước, kể cả menu hoặc video t�
 
 ```sh
 adb connect DIA_CHI_IP_TV:5555
-adb install -r out/Hoc-Roi-Xem-TV-v1.1.0.apk
+adb install -r out/Hoc-Roi-Xem-TV-v1.2.0.apk
 adb shell appops set vn.tvquiz SYSTEM_ALERT_WINDOW allow
 adb shell appops set vn.tvquiz GET_USAGE_STATS allow
 ```
@@ -89,3 +89,14 @@ Bản cũ chưa hỗ trợ cập nhật trong app: cài APK 1.1.0 bằng USB/Loc
 Quy trình phát hành tiếp theo: tăng versionCode và versionName, build bằng khóa ký gốc, tạo GitHub Release chính thức có tag `vX.Y.Z`, đính kèm `Hoc-Roi-Xem-TV-vX.Y.Z.apk`. GitHub cung cấp digest SHA-256 cho asset; app sẽ từ chối asset thiếu digest hoặc sai tên. Không dùng draft/prerelease để phân phối bản cập nhật này.
 
 Đã kiểm thử chính sách phiên bản/URL, toàn bộ kiểm thử PIN và câu hỏi, kiểm tra metadata GitHub thực tế, build và xác minh APK. Cần kiểm tra luồng cấp quyền/cài đặt trên TV thật; không có thiết bị Android kết nối trong phiên phát triển.
+
+### v1.2.0 — giao diện phụ huynh mới
+
+- Menu bên trái gồm Giờ xem, Bài học, Hệ thống; chọn nhóm bằng OK, bấm phải để đến các thẻ cài đặt.
+- Giờ xem: bật/tắt theo dõi, thời gian mỗi lượt, tạm nghỉ và tiếp tục/thử câu hỏi.
+- Bài học: lớp, môn, số câu đúng và thử lượt bài.
+- Hệ thống: quyền hiển thị, quyền sử dụng, đổi PIN và kiểm tra cập nhật.
+- Thẻ cài đặt có giá trị nổi bật và viền xanh khi được chọn. Đổi cài đặt giữ nhóm và vị trí thao tác.
+- Nút Khóa & về trang chủ luôn có trong menu. Back vẫn khóa trang quản trị.
+
+APK đã build, xác minh chữ ký và alignment. Bố cục dùng dp và chiều cao tự giãn, phần nội dung có thể cuộn khi tăng cỡ chữ; cần kiểm tra hình ảnh và remote trên TV thật.

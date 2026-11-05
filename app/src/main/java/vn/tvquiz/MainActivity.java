@@ -3,7 +3,7 @@ import android.app.*;import android.app.usage.*;import android.content.*;import 
 public class MainActivity extends Activity {
  final java.util.ArrayList<Dialog> dialogs=new java.util.ArrayList<>();
  <T extends Dialog> T track(T dialog){dialogs.add(dialog);return dialog;}
- AppUpdater updater;
+ AppUpdater updater; ParentDashboard dashboard; int adminTab=0;
  boolean admin=false; TextView timer; TextView status; Button overlayPermission,usagePermission; Handler handler=new Handler();
  final Runnable refresh=new Runnable(){public void run(){
   boolean draw=Settings.canDrawOverlays(MainActivity.this),usage=usageAllowed(MainActivity.this);
@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
   updater=new AppUpdater(this);showHome();
  }
  void showHome(){
-  admin=false;overlayPermission=null;usagePermission=null;
+  admin=false;dashboard=null;overlayPermission=null;usagePermission=null;
   ScrollView scroll=new ScrollView(this);scroll.setFillViewport(true);scroll.setBackgroundColor(Color.rgb(14,24,48));
   LinearLayout root=panel(this);scroll.addView(root);setContentView(scroll);brand(this,root);
   LinearLayout columns=new LinearLayout(this);columns.setOrientation(LinearLayout.HORIZONTAL);
@@ -85,7 +85,7 @@ public class MainActivity extends Activity {
   label(this,controls,"Tự theo dõi YouTube sau khi thiết lập. Không cần mở Học Rồi Xem TV mỗi lần xem.",16).setTextColor(Color.rgb(165,190,212));
   button(this,controls,ParentGate.exists(this)?"Quản trị phụ huynh • PIN":"Thiết lập PIN phụ huynh",v->ParentGate.enter(this,()->{ensureService();showAdmin();}));
   label(this,controls,"Đổi thời gian • Tạm nghỉ • Bật/tắt\nCài đặt được bảo vệ bằng mã PIN.",14);
-  label(this,root,"↑ ↓ ← →  Di chuyển     •     OK  Chọn                                      PHIÊN BẢN 1.1.0",12).setTextColor(Color.rgb(165,190,212));
+  label(this,root,"↑ ↓ ← →  Di chuyển     •     OK  Chọn                                      PHIÊN BẢN 1.2.0",12).setTextColor(Color.rgb(165,190,212));
   label(this,root,"Tính thời gian khi YouTube đang mở, kể cả lúc tạm dừng. Câu hỏi dùng ngoại tuyến. Có thể thoát bằng Home.",12).setTextColor(Color.rgb(165,190,212));
   startButton.requestFocus();
  }
@@ -107,27 +107,11 @@ public class MainActivity extends Activity {
   prefs().edit().putLong("elapsed",0).putBoolean("due",false).putBoolean("round_active",false).putInt("round_correct",0).putInt("round_index",0).commit();
   if(prefs().getBoolean("enabled",true)&&Settings.canDrawOverlays(this)&&usageAllowed(this))startForegroundService(new Intent(this,QuizService.class).setAction("config"));
   else stopService(new Intent(this,QuizService.class));
-  showAdmin();
+  if(dashboard!=null)dashboard.render(true);else showAdmin();
  }
  void showAdmin(){
-  admin=true;timer=null;status=null;
-  ScrollView scroll=new ScrollView(this);scroll.setFillViewport(true);LinearLayout root=panel(this);scroll.addView(root);setContentView(scroll);brand(this,root);
-  label(this,root,"QUẢN TRỊ PHỤ HUYNH",24);
-  label(this,root,"Tự khóa trang này khi rời ứng dụng. Đổi thời gian hoặc chế độ sẽ bắt đầu một lượt đếm mới.",13);
-  overlayPermission=button(this,root,"Hiển thị câu hỏi",v->settings(new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,Uri.parse("package:"+getPackageName()))));
-  usagePermission=button(this,root,"Nhận biết YouTube",v->settings(new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS)));
-  button(this,root,"Tự động theo dõi: "+(prefs().getBoolean("enabled",true)?"BẬT — chọn để tắt":"TẮT — chọn để bật"),v->{prefs().edit().putBoolean("enabled",!prefs().getBoolean("enabled",true)).commit();changed();});
-  button(this,root,"Hiện câu hỏi sau: "+duration(prefs().getLong("interval",30000)),v->chooseInterval());
-  button(this,root,"Số câu đúng mỗi lượt: "+prefs().getInt("question_count",1),v->chooseCount());
-  button(this,root,"Lớp học: "+prefs().getInt("grade",1),v->chooseGrade());
-  button(this,root,"Môn học: "+QuestionBank.subjectName(prefs().getInt("subject",0)),v->chooseSubject());
-  long until=prefs().getLong("pause_until",0);
-  button(this,root,until>System.currentTimeMillis()?"Đang tạm nghỉ — còn "+duration(until-System.currentTimeMillis()):"Tạm nghỉ đếm giờ…",v->choosePause());
-  if(until>System.currentTimeMillis())button(this,root,"Kết thúc tạm nghỉ ngay",v->{prefs().edit().putLong("pause_until",0).commit();changed();});
-  button(this,root,"Thử một lượt câu hỏi",v->start(true));
-  button(this,root,"Kiểm tra cập nhật ứng dụng",v->updater.check(true));
-  button(this,root,"Đổi mã PIN",v->ParentGate.set(this,()->Toast.makeText(this,"Đã đổi PIN",0).show()));
-  button(this,root,"Khóa quản trị và quay lại",v->showHome());
+  admin=true;timer=null;status=null;overlayPermission=null;usagePermission=null;
+  dashboard=new ParentDashboard(this,adminTab);
  }
  void chooseCount(){
   String[] labels=new String[20];for(int i=0;i<20;i++)labels[i]=(i+1)+" câu đúng";
