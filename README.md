@@ -17,7 +17,29 @@
 
 Bản **1.0.1** sửa lỗi hiển thị PIN: che ngay mọi chữ số khi nhập, kể cả ký tự vừa gõ. Bản vá đã được kiểm thử phần xử lý PIN và chữ ký APK; cần kiểm tra trực tiếp trên TV.
 
-Chép APK vào USB và mở bằng trình quản lý tệp trên TV để cài. Có thể cài đè bản cũ, giữ PIN và cài đặt. Sau khi cài, mở app để thiết lập PIN và cấp hai quyền cần thiết.
+## Cách cài trên Android TV
+
+### Cách 1: Chép qua USB
+
+1. Tải APK ở liên kết phía trên, chép vào USB và cắm USB vào TV.
+2. Mở APK bằng trình quản lý tệp trên TV, chọn **Cài đặt**.
+3. Nếu TV yêu cầu, cấp quyền **Cài ứng dụng không rõ nguồn gốc** cho trình quản lý tệp đang dùng, rồi mở APK lại.
+
+### Cách 2: Gửi từ iPhone hoặc Android bằng LocalSend
+
+[LocalSend](https://localsend.org/) hỗ trợ gửi tệp giữa các thiết bị trong cùng mạng nội bộ. Cài ứng dụng trên **cả điện thoại và TV**; xem các liên kết tải chính thức tại [localsend.org/download](https://localsend.org/download).
+
+1. **Trên điện thoại:** cài LocalSend từ App Store (iPhone/iOS) hoặc Google Play (Android). Tải APK Học Rồi Xem TV ở phía trên. Trên iPhone, lưu APK vào ứng dụng **Tệp / Files**; chỉ gửi tệp sang TV, không cài APK trên iPhone.
+2. **Trên TV:** tìm và cài LocalSend trong Google Play nếu có trên thiết bị. Nếu không tìm thấy, có thể cài APK LocalSend từ nguồn chính thức qua USB trước.
+3. Kết nối điện thoại và TV vào **cùng mạng nhà** (cùng Wi-Fi; TV dùng dây LAN cùng router cũng được). Mở LocalSend trên cả hai thiết bị. Cho phép quyền **Mạng cục bộ / Local Network** trên iPhone khi được hỏi.
+4. Trên điện thoại, vào **Gửi / Send → Tệp / Files**, chọn `Hoc-Roi-Xem-TV-v1.0.1.apk`, rồi chọn tên TV trong danh sách thiết bị.
+5. Trên TV, **chấp nhận nhận tệp** và chờ gửi xong. Ghi nhớ thư mục lưu được LocalSend hiển thị hoặc cấu hình trên TV.
+6. Mở APK vừa nhận; nếu LocalSend không mở được trình cài đặt, dùng trình quản lý tệp trên TV vào thư mục lưu để mở APK.
+7. Khi TV hỏi, cấp quyền **Cài ứng dụng không rõ nguồn gốc** cho ứng dụng đang mở APK (LocalSend hoặc trình quản lý tệp), rồi chọn **Cài đặt**.
+
+**Không thấy TV trong LocalSend?** Kiểm tra hai thiết bị cùng mạng, LocalSend đang mở, quyền Mạng cục bộ đã bật và không dùng mạng Wi-Fi khách có tính năng cách ly thiết bị.
+
+Sau khi cài bằng một trong hai cách, mở **Học Rồi Xem TV** để thiết lập PIN và cấp hai quyền cần thiết. Nếu đã cài bản trước, cài đè để giữ PIN và cài đặt.
 
 - [Hướng dẫn cài đặt và sử dụng](HUONG-DAN.md)
 - [Ngân hàng Tiếng Việt và đáp án](NGAN-HANG-TIENG-VIET.md)
