@@ -1,4 +1,4 @@
-package vn.tvquiz;
+package vn.hocroixemtv;
 /** Persisted by the service after every answer; mistakes do not erase correct answers. */
 final class QuizRound {
  final int required;int correct,index;

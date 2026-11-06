@@ -1,4 +1,4 @@
-package vn.tvquiz;
+package vn.hocroixemtv;
 import android.app.*;import android.content.*;import android.text.InputType;import android.widget.*;
 final class ParentGate {
  static boolean exists(Context c){return c.getSharedPreferences("quiz",0).contains("pin_hash");}

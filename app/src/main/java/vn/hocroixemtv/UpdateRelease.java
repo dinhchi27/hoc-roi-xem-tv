@@ -1,4 +1,4 @@
-package vn.tvquiz;
+package vn.hocroixemtv;
 import java.io.IOException;import org.json.*;
 final class UpdateRelease {
  static final long MAX=25L*1024*1024;

@@ -1,4 +1,4 @@
-package vn.tvquiz;
+package vn.hocroixemtv;
 import android.content.*;import android.database.*;import android.net.Uri;import android.os.*;import android.provider.OpenableColumns;import java.io.*;
 /** Only exposes the verified update APK, read-only, via explicit URI grants. */
 public class UpdateProvider extends ContentProvider {

@@ -1,4 +1,4 @@
-package vn.tvquiz;
+package vn.hocroixemtv;
 import java.net.URI;
 final class UpdatePolicy {
  static final String REPO="dinhchi27/hoc-roi-xem-tv";

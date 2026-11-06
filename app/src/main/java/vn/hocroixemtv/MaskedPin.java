@@ -1,4 +1,4 @@
-package vn.tvquiz;
+package vn.hocroixemtv;
 
 /** Live masked view: never reveals the most recently typed character. */
 final class MaskedPin implements CharSequence {

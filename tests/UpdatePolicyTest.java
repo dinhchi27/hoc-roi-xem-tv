@@ -1,4 +1,4 @@
-package vn.tvquiz;
+package vn.hocroixemtv;
 public class UpdatePolicyTest {
  static void check(boolean ok){if(!ok)throw new AssertionError();}
  public static void main(String[] args){

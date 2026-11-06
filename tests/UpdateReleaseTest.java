@@ -1,4 +1,4 @@
-package vn.tvquiz;
+package vn.hocroixemtv;
 import org.json.*;
 public class UpdateReleaseTest {
  static void check(boolean ok){if(!ok)throw new AssertionError();}

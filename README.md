@@ -1,6 +1,8 @@
-# 📺 Học Rồi Xem TV — Phiên bản 1.2.1
+# 📺 Học Rồi Xem TV — Phiên bản 1.2.2
 
 *Quản lý giờ xem, mở khóa bằng kiến thức.*
+
+> **Mã nguồn v1.2.2, chưa phát hành APK:** mã định danh Android đã đổi thành `vn.hocroixemtv`. Đây là ứng dụng riêng, không nâng cấp đè hoặc tự chuyển PIN/dữ liệu từ bản đã phát hành. Cần cấp quyền và thiết lập PIN lại. Các liên kết GitHub bên dưới vẫn trỏ đến bản đã phát hành với mã định danh cũ.
 
 - 🛠️ App Android TV mình tự phát triển, giúp phụ huynh quản lý bé xem YouTube.
 - ⏱️ Tự đếm thời gian khi mở YouTube sau khi thiết lập lần đầu; đến giờ sẽ hiện câu hỏi.
@@ -12,6 +14,8 @@
 - ℹ️ Không khóa nút Home hay cài đặt hệ thống; khả năng chạy nền phụ thuộc từng TV.
 
 ## Tải APK
+
+Bản **1.2.2** hiện được build cục bộ tại `out/Hoc-Roi-Xem-TV-v1.2.2.apk`, chưa phát hành lên GitHub. Liên kết bên dưới là bản đã phát hành trước đó.
 
 **[⬇ Tải Học Rồi Xem TV v1.2.1](https://github.com/dinhchi27/hoc-roi-xem-tv/releases/download/v1.2.1/Hoc-Roi-Xem-TV-v1.2.1.apk)**
 
@@ -57,7 +61,7 @@ Sau khi cài bằng một trong hai cách, mở **Học Rồi Xem TV** để thi
 
 ## Cấu trúc
 
-- `app/src/main/`: mã Java, manifest, tài nguyên Android.
+- `app/src/main/`: mã Java (package `vn.hocroixemtv`), manifest, tài nguyên Android.
 - `assets/`: logo, banner.
 - `tests/`: kiểm thử ngân hàng câu hỏi, tiến độ và xác minh PIN.
 - `build.sh`: biên dịch, đóng gói và ký APK.
@@ -70,10 +74,12 @@ Script hiện cấu hình cho macOS, JDK 21 và Android SDK tải riêng:
 - Android API 30: `.tools/platform/android-11/android.jar`.
 - Android Build Tools 35.0.0: `.tools/build-tools35/android-15/`.
 
-Chạy `./build.sh`; kết quả `out/Hoc-Roi-Xem-TV-v1.2.1.apk`.
+Chạy `./build.sh`; kết quả `out/Hoc-Roi-Xem-TV-v1.2.2.apk`.
 
 SDK, file build và khóa ký **không được đưa lên Git**. Script tạo khóa thử nghiệm cục bộ nếu chưa có; APK ký bằng khóa mới không thể cài đè bản đã ký bằng khóa khác. Để cập nhật bản đang cài trên TV phải sử dụng khóa gốc được giữ riêng trên máy phát triển.
 
 ## Giới hạn
 
 Thời gian tính khi ứng dụng YouTube đang ở phía trước, kể cả menu/tạm dừng. Nút Home và cài đặt hệ thống không bị khóa. Khả năng chạy nền và nhận lệnh tạm dừng phụ thuộc TV. Nội dung học tập là ôn tập cơ bản, không cam kết khớp từng bộ sách. Chưa phát hành trên Play Store.
+
+Package Java và mã định danh Android của mã nguồn hiện tại là `vn.hocroixemtv`.

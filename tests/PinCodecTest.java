@@ -1,4 +1,4 @@
-package vn.tvquiz;
+package vn.hocroixemtv;
 public class PinCodecTest {
  public static void main(String[] args){
   String salt=PinCodec.salt(),other=PinCodec.salt();

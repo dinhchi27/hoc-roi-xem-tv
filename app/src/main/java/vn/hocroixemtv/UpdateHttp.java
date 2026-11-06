@@ -1,4 +1,4 @@
-package vn.tvquiz;
+package vn.hocroixemtv;
 import java.io.*;import java.net.*;
 /** Shared by the Android updater and host-side end-to-end transport checks. */
 final class UpdateHttp {
@@ -7,7 +7,7 @@ final class UpdateHttp {
    if(!UpdatePolicy.trustedRedirect(url))throw new IOException("Nguồn tải không được phép");
    HttpURLConnection c=(HttpURLConnection)new URL(url).openConnection();
    c.setConnectTimeout(15000);c.setReadTimeout(20000);c.setInstanceFollowRedirects(false);c.setUseCaches(false);
-   c.setRequestProperty("User-Agent","HocRoiXemTV-Updater/1.2.1");
+   c.setRequestProperty("User-Agent","HocRoiXemTV-Updater/1.2.2");
    c.setRequestProperty("Accept",url.startsWith("https://api.github.com/")?"application/vnd.github+json":"*/*");
    int code;try{code=c.getResponseCode();}catch(IOException e){c.disconnect();throw e;}
    if(code>=300&&code<400){String location=c.getHeaderField("Location");c.disconnect();if(location==null)throw new IOException("Chuyển hướng thiếu địa chỉ");url=new URL(new URL(url),location).toString();continue;}

@@ -1,4 +1,4 @@
-package vn.tvquiz;
+package vn.hocroixemtv;
 import java.util.*;
 
 /** Original short Vietnamese exercises; columns: prompt, correct, distractor, distractor. */

@@ -1,4 +1,4 @@
-package vn.tvquiz;
+package vn.hocroixemtv;
 public class MaskedPinTest {
  static void check(boolean value){if(!value)throw new AssertionError();}
  public static void main(String[] args){

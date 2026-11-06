@@ -1,4 +1,4 @@
-package vn.tvquiz;
+package vn.hocroixemtv;
 import java.net.*;import java.io.*;import java.security.*;import org.json.*;
 /** Real network smoke check, explicitly run when validating a release. */
 public class UpdateLiveCheck {

@@ -1,4 +1,4 @@
-package vn.tvquiz;
+package vn.hocroixemtv;
 import java.util.*;import java.text.Normalizer;
 public class VietnameseBankTest {
  static void check(boolean value,String msg){if(!value)throw new AssertionError(msg);}

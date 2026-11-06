@@ -1,6 +1,8 @@
-# Học Rồi Xem TV 1.2.1 — chạy nền và quản trị phụ huynh
+# Học Rồi Xem TV 1.2.2 — chạy nền và quản trị phụ huynh
 
-APK: `out/Hoc-Roi-Xem-TV-v1.2.1.apk`. Cài đè bản cũ để giữ quyền đã cấp. Package `vn.tvquiz`, giữ khóa ký của các bản trước. Không cần gỡ app.
+Mã nguồn v1.2.2 dùng package `vn.hocroixemtv` (chưa phát hành). Android coi đây là ứng dụng mới: cần thiết lập lại PIN, quyền và cấu hình. Không dùng cập nhật trong app để chuyển từ package cũ. Tắt theo dõi trong ứng dụng cũ trước khi bật ứng dụng mới để tránh hai dịch vụ cùng chạy.
+
+APK đã phát hành `out/Hoc-Roi-Xem-TV-v1.2.1.apk` vẫn dùng package cũ. Các ghi chú cài đè/lịch sử bên dưới áp dụng cho các bản cùng mã định danh.
 
 ## Thiết lập một lần
 
@@ -51,9 +53,9 @@ App tính thời gian YouTube ở phía trước, kể cả menu hoặc video t�
 
 ```sh
 adb connect DIA_CHI_IP_TV:5555
-adb install -r out/Hoc-Roi-Xem-TV-v1.2.1.apk
-adb shell appops set vn.tvquiz SYSTEM_ALERT_WINDOW allow
-adb shell appops set vn.tvquiz GET_USAGE_STATS allow
+adb install -r out/Hoc-Roi-Xem-TV-v1.2.2.apk
+adb shell appops set vn.hocroixemtv SYSTEM_ALERT_WINDOW allow
+adb shell appops set vn.hocroixemtv GET_USAGE_STATS allow
 ```
 
 ## Build và xác minh
@@ -113,3 +115,7 @@ Nếu bản cũ không cập nhật được, dùng LocalSend/USB cài đè `Hoc
 Đã kiểm thử parser trên dữ liệu thật, xử lý metadata không hợp lệ, chính sách URL/phiên bản và tải APK thật qua cùng mã Java trên máy phát triển. Chưa có log/thiết bị TV để xác định nguyên nhân ban đầu tại nhà người dùng.
 
 Khi phát hành: build và tải APK lên Release trước; chạy `python3 scripts/update_manifest.py` rồi đẩy `updates/latest.json`. Chỉnh `body` trong manifest nếu cần nội dung cập nhật riêng. Không sửa APK sau khi tạo digest; phải tạo lại manifest nếu build lại.
+
+### v1.2.2 — mã định danh ứng dụng mới
+
+APK cục bộ: `out/Hoc-Roi-Xem-TV-v1.2.2.apk`, versionCode 14. Package Java và Android là `vn.hocroixemtv`. Đây là ứng dụng riêng so với package cũ, cần cài và thiết lập lại; tắt theo dõi ở app cũ để tránh chạy trùng. Chưa phát hành APK trên GitHub Releases và chưa thay metadata cập nhật công khai.

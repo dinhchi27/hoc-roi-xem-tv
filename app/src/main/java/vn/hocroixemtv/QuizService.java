@@ -1,4 +1,4 @@
-package vn.tvquiz;
+package vn.hocroixemtv;
 import android.app.*;import android.app.usage.*;import android.content.*;import android.graphics.PixelFormat;import android.media.AudioManager;import android.os.*;import android.provider.Settings;import android.view.*;import android.widget.*;import java.util.Random;
 public class QuizService extends Service {
  Handler h=new Handler();SharedPreferences p;WindowManager wm;LinearLayout overlay;String foreground="";long since,last,elapsed;boolean preview;Random random=new Random(); QuizRound round; long roundSeed; java.util.List<QuestionBank.Question> bank;

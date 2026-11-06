@@ -1,4 +1,4 @@
-package vn.tvquiz;
+package vn.hocroixemtv;
 import java.util.*;import java.util.regex.*;import java.math.BigDecimal;
 public class QuestionBankTest {
  static void check(boolean ok,String why){if(!ok)throw new AssertionError(why);}
