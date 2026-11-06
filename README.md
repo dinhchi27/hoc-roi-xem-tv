@@ -61,6 +61,40 @@ Sau khi cài bằng một trong hai cách, mở **Học Rồi Xem TV** để thi
 - [Hướng dẫn cài đặt và sử dụng](HUONG-DAN.md)
 - [Ngân hàng Tiếng Việt và đáp án](NGAN-HANG-TIENG-VIET.md)
 
+## Giao diện thực tế trên TV
+
+Ảnh chụp trực tiếp từ Sony Bravia 4K UR3, Android TV 10, phiên bản ứng dụng 1.2.2. Các giá trị trong ảnh là cấu hình minh họa trên thiết bị.
+
+### Trang chính
+
+Xem trạng thái và mở YouTube; trang phụ huynh được bảo vệ bằng PIN.
+
+![Trang chính Học Rồi Xem TV](assets/screenshots/01-home.png)
+
+### Quản lý giờ xem
+
+Bật/tắt theo dõi, chọn thời gian mỗi lượt và tạm nghỉ.
+
+![Cài đặt giờ xem](assets/screenshots/02-parent-time.png)
+
+### Cài đặt bài học
+
+Chọn lớp, môn học, số câu đúng và thử một lượt câu hỏi.
+
+![Cài đặt bài học](assets/screenshots/03-parent-learning.png)
+
+### Hệ thống và bảo mật
+
+Kiểm tra quyền ứng dụng, đổi PIN và kiểm tra cập nhật.
+
+![Hệ thống và bảo mật](assets/screenshots/04-parent-system.png)
+
+### Trả lời để xem tiếp
+
+Câu hỏi có ba lựa chọn và hiển thị tiến độ; điều khiển bằng remote.
+
+![Câu hỏi Toán và tiến độ](assets/screenshots/05-quiz.png)
+
 ## Cấu trúc
 
 - `app/src/main/`: mã Java (package `vn.hocroixemtv`), manifest, tài nguyên Android.
