@@ -168,4 +168,3 @@ Script hiện cấu hình cho macOS, JDK 21 và Android SDK tải riêng:
 Chạy `./build.sh`; kết quả `out/Hoc-Roi-Xem-TV-v1.2.2.apk`.
 
 SDK, file build và khóa ký **không được đưa lên Git**. Script tạo khóa thử nghiệm cục bộ nếu chưa có; APK ký bằng khóa mới không thể cài đè bản đã ký bằng khóa khác. Để cập nhật bản đang cài trên TV phải sử dụng khóa gốc được giữ riêng trên máy phát triển.
-
