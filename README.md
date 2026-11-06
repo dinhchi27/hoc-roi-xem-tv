@@ -2,7 +2,7 @@
 
 *Quản lý giờ xem, mở khóa bằng kiến thức.*
 
-> **Mã nguồn v1.2.2, chưa phát hành APK:** mã định danh Android đã đổi thành `vn.hocroixemtv`. Đây là ứng dụng riêng, không nâng cấp đè hoặc tự chuyển PIN/dữ liệu từ bản đã phát hành. Cần cấp quyền và thiết lập PIN lại. Các liên kết GitHub bên dưới vẫn trỏ đến bản đã phát hành với mã định danh cũ.
+> **Lưu ý khi cài v1.2.2:** mã định danh Android đã đổi thành `vn.hocroixemtv`. Đây là ứng dụng riêng, không nâng cấp đè hoặc tự chuyển PIN/dữ liệu từ bản đã phát hành. Cần cấp quyền và thiết lập PIN lại. Tắt theo dõi ở app cũ trước khi dùng app mới.
 
 - 🛠️ App Android TV mình tự phát triển, giúp phụ huynh quản lý bé xem YouTube.
 - ⏱️ Tự đếm thời gian khi mở YouTube sau khi thiết lập lần đầu; đến giờ sẽ hiện câu hỏi.
@@ -15,13 +15,15 @@
 
 ## Tải APK
 
-Bản **1.2.2** hiện được build cục bộ tại `out/Hoc-Roi-Xem-TV-v1.2.2.apk`, chưa phát hành lên GitHub. Liên kết bên dưới là bản đã phát hành trước đó.
+Bản **1.2.2** dùng mã định danh mới. Cài qua USB hoặc LocalSend và thiết lập lại PIN/quyền.
 
-**[⬇ Tải Học Rồi Xem TV v1.2.1](https://github.com/dinhchi27/hoc-roi-xem-tv/releases/download/v1.2.1/Hoc-Roi-Xem-TV-v1.2.1.apk)**
+**[⬇ Tải Học Rồi Xem TV v1.2.2](https://github.com/dinhchi27/hoc-roi-xem-tv/releases/download/v1.2.2/Hoc-Roi-Xem-TV-v1.2.2.apk)**
 
 Bản **1.2.1** cải thiện kiểm tra cập nhật với nguồn thông tin tĩnh, API dự phòng và thông báo lỗi cụ thể. Trang phụ huynh có ba nhóm **Giờ xem / Bài học / Hệ thống**, các thẻ cài đặt lớn và điều hướng rõ ràng bằng remote. App hỗ trợ cập nhật từ GitHub Releases. Khi có bản mới, phụ huynh nhập PIN để tải và xác nhận cài đặt trên Android TV.
 
 ## Cập nhật ngay trên TV
+
+**Chuyển sang v1.2.2:** không dùng OTA để chuyển từ package cũ. Nguồn OTA và nhãn Latest của app cũ vẫn giữ ở v1.2.1. Tải v1.2.2 bằng liên kết trực tiếp phía trên.
 
 - Cài bản **1.1.0** bằng USB hoặc LocalSend một lần để có chức năng cập nhật.
 - Mỗi khi mở app, ứng dụng kiểm tra bản chính thức mới nhất trên GitHub (các lần mở cách nhau dưới 60 giây được gộp để hạn chế truy vấn).
@@ -47,7 +49,7 @@ Android yêu cầu xác nhận cài đặt; app không cài âm thầm. Chức n
 1. **Trên điện thoại:** cài LocalSend từ App Store (iPhone/iOS) hoặc Google Play (Android). Tải APK Học Rồi Xem TV ở phía trên. Trên iPhone, lưu APK vào ứng dụng **Tệp / Files**; chỉ gửi tệp sang TV, không cài APK trên iPhone.
 2. **Trên TV:** tìm và cài LocalSend trong Google Play nếu có trên thiết bị. Nếu không tìm thấy, có thể cài APK LocalSend từ nguồn chính thức qua USB trước.
 3. Kết nối điện thoại và TV vào **cùng mạng nhà** (cùng Wi-Fi; TV dùng dây LAN cùng router cũng được). Mở LocalSend trên cả hai thiết bị. Cho phép quyền **Mạng cục bộ / Local Network** trên iPhone khi được hỏi.
-4. Trên điện thoại, vào **Gửi / Send → Tệp / Files**, chọn `Hoc-Roi-Xem-TV-v1.2.1.apk`, rồi chọn tên TV trong danh sách thiết bị.
+4. Trên điện thoại, vào **Gửi / Send → Tệp / Files**, chọn `Hoc-Roi-Xem-TV-v1.2.2.apk`, rồi chọn tên TV trong danh sách thiết bị.
 5. Trên TV, **chấp nhận nhận tệp** và chờ gửi xong. Ghi nhớ thư mục lưu được LocalSend hiển thị hoặc cấu hình trên TV.
 6. Mở APK vừa nhận; nếu LocalSend không mở được trình cài đặt, dùng trình quản lý tệp trên TV vào thư mục lưu để mở APK.
 7. Khi TV hỏi, cấp quyền **Cài ứng dụng không rõ nguồn gốc** cho ứng dụng đang mở APK (LocalSend hoặc trình quản lý tệp), rồi chọn **Cài đặt**.

@@ -1,6 +1,6 @@
 # Học Rồi Xem TV 1.2.2 — chạy nền và quản trị phụ huynh
 
-Mã nguồn v1.2.2 dùng package `vn.hocroixemtv` (chưa phát hành). Android coi đây là ứng dụng mới: cần thiết lập lại PIN, quyền và cấu hình. Không dùng cập nhật trong app để chuyển từ package cũ. Tắt theo dõi trong ứng dụng cũ trước khi bật ứng dụng mới để tránh hai dịch vụ cùng chạy.
+Mã nguồn v1.2.2 dùng package `vn.hocroixemtv`. Android coi đây là ứng dụng mới: cần thiết lập lại PIN, quyền và cấu hình. Không dùng cập nhật trong app để chuyển từ package cũ. Tắt theo dõi trong ứng dụng cũ trước khi bật ứng dụng mới để tránh hai dịch vụ cùng chạy.
 
 APK đã phát hành `out/Hoc-Roi-Xem-TV-v1.2.1.apk` vẫn dùng package cũ. Các ghi chú cài đè/lịch sử bên dưới áp dụng cho các bản cùng mã định danh.
 
@@ -118,4 +118,4 @@ Khi phát hành: build và tải APK lên Release trước; chạy `python3 scri
 
 ### v1.2.2 — mã định danh ứng dụng mới
 
-APK cục bộ: `out/Hoc-Roi-Xem-TV-v1.2.2.apk`, versionCode 14. Package Java và Android là `vn.hocroixemtv`. Đây là ứng dụng riêng so với package cũ, cần cài và thiết lập lại; tắt theo dõi ở app cũ để tránh chạy trùng. Chưa phát hành APK trên GitHub Releases và chưa thay metadata cập nhật công khai.
+APK: `out/Hoc-Roi-Xem-TV-v1.2.2.apk`, versionCode 14. Package Java và Android là `vn.hocroixemtv`. Đây là ứng dụng riêng so với package cũ, cần cài và thiết lập lại; tắt theo dõi ở app cũ để tránh chạy trùng. Đã phát hành APK trên GitHub Releases; metadata OTA và nhãn Latest của app cũ vẫn giữ nguyên.
