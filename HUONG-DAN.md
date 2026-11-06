@@ -119,3 +119,53 @@ Khi phát hành: build và tải APK lên Release trước; chạy `python3 scri
 ### v1.2.2 — mã định danh ứng dụng mới
 
 APK: `out/Hoc-Roi-Xem-TV-v1.2.2.apk`, versionCode 14. Package Java và Android là `vn.hocroixemtv`. Đây là ứng dụng riêng so với package cũ, cần cài và thiết lập lại; tắt theo dõi ở app cũ để tránh chạy trùng. Đã phát hành APK trên GitHub Releases; metadata OTA và nhãn Latest của app cũ vẫn giữ nguyên.
+
+## Cài đặt và build chi tiết
+
+## Cách cài trên Android TV
+
+### Cách 1: Chép qua USB
+
+1. Tải APK ở liên kết phía trên, chép vào USB và cắm USB vào TV.
+2. Mở APK bằng trình quản lý tệp trên TV, chọn **Cài đặt**.
+3. Nếu TV yêu cầu, cấp quyền **Cài ứng dụng không rõ nguồn gốc** cho trình quản lý tệp đang dùng, rồi mở APK lại.
+
+### Cách 2: Gửi từ iPhone hoặc Android bằng LocalSend
+
+[LocalSend](https://localsend.org/) hỗ trợ gửi tệp giữa các thiết bị trong cùng mạng nội bộ. Cài ứng dụng trên **cả điện thoại và TV**; xem các liên kết tải chính thức tại [localsend.org/download](https://localsend.org/download).
+
+1. **Trên điện thoại:** cài LocalSend từ App Store (iPhone/iOS) hoặc Google Play (Android). Tải APK Học Rồi Xem TV ở phía trên. Trên iPhone, lưu APK vào ứng dụng **Tệp / Files**; chỉ gửi tệp sang TV, không cài APK trên iPhone.
+2. **Trên TV:** tìm và cài LocalSend trong Google Play nếu có trên thiết bị. Nếu không tìm thấy, có thể cài APK LocalSend từ nguồn chính thức qua USB trước.
+3. Kết nối điện thoại và TV vào **cùng mạng nhà** (cùng Wi-Fi; TV dùng dây LAN cùng router cũng được). Mở LocalSend trên cả hai thiết bị. Cho phép quyền **Mạng cục bộ / Local Network** trên iPhone khi được hỏi.
+4. Trên điện thoại, vào **Gửi / Send → Tệp / Files**, chọn `Hoc-Roi-Xem-TV-v1.2.2.apk`, rồi chọn tên TV trong danh sách thiết bị.
+5. Trên TV, **chấp nhận nhận tệp** và chờ gửi xong. Ghi nhớ thư mục lưu được LocalSend hiển thị hoặc cấu hình trên TV.
+6. Mở APK vừa nhận; nếu LocalSend không mở được trình cài đặt, dùng trình quản lý tệp trên TV vào thư mục lưu để mở APK.
+7. Khi TV hỏi, cấp quyền **Cài ứng dụng không rõ nguồn gốc** cho ứng dụng đang mở APK (LocalSend hoặc trình quản lý tệp), rồi chọn **Cài đặt**.
+
+**Không thấy TV trong LocalSend?** Kiểm tra hai thiết bị cùng mạng, LocalSend đang mở, quyền Mạng cục bộ đã bật và không dùng mạng Wi-Fi khách có tính năng cách ly thiết bị.
+
+Sau khi cài bằng một trong hai cách, mở **Học Rồi Xem TV** để thiết lập PIN và cấp hai quyền cần thiết. Bản 1.2.2 dùng mã định danh mới: nếu chuyển từ bản cũ, cần thiết lập lại PIN và quyền.
+
+- [Hướng dẫn cài đặt và sử dụng](HUONG-DAN.md)
+- [Ngân hàng Tiếng Việt và đáp án](NGAN-HANG-TIENG-VIET.md)
+
+
+## Cấu trúc
+
+- `app/src/main/`: mã Java (package `vn.hocroixemtv`), manifest, tài nguyên Android.
+- `assets/`: logo, banner.
+- `tests/`: kiểm thử ngân hàng câu hỏi, tiến độ và xác minh PIN.
+- `build.sh`: biên dịch, đóng gói và ký APK.
+
+## Build
+
+Script hiện cấu hình cho macOS, JDK 21 và Android SDK tải riêng:
+
+- JDK: `/opt/homebrew/opt/openjdk@21`, hoặc đặt `TVQUIZ_JAVA_HOME`.
+- Android API 30: `.tools/platform/android-11/android.jar`.
+- Android Build Tools 35.0.0: `.tools/build-tools35/android-15/`.
+
+Chạy `./build.sh`; kết quả `out/Hoc-Roi-Xem-TV-v1.2.2.apk`.
+
+SDK, file build và khóa ký **không được đưa lên Git**. Script tạo khóa thử nghiệm cục bộ nếu chưa có; APK ký bằng khóa mới không thể cài đè bản đã ký bằng khóa khác. Để cập nhật bản đang cài trên TV phải sử dụng khóa gốc được giữ riêng trên máy phát triển.
+
